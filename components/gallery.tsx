@@ -1,0 +1,102 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
+
+const galleryImages = Array.from({ length: 8 }).map((_, index) => ({
+  id: index + 1,
+  src: `/placeholder.svg?height=400&width=400&text=Gallery+${index + 1}`,
+  alt: `Gallery image ${index + 1}`,
+  title: `Project ${index + 1}`,
+  description: `Description for project ${index + 1}`,
+}))
+
+export default function Gallery() {
+  const [open, setOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const openLightbox = (index: number) => {
+    setCurrentImage(index)
+    setOpen(true)
+  }
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % galleryImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
+  }
+
+  return (
+    <>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {galleryImages.map((image, index) => (
+          <div
+            key={image.id}
+            className="relative aspect-square overflow-hidden rounded-lg cursor-pointer"
+            onClick={() => openLightbox(index)}
+          >
+            <Image
+              src={image.src || "/placeholder.svg"}
+              alt={image.alt}
+              fill
+              className="object-cover hover:scale-105 transition-transform"
+            />
+          </div>
+        ))}
+      </div>
+      <div className="text-center mt-8">
+        <Button>View More Projects</Button>
+      </div>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background/95 backdrop-blur-sm">
+          <div className="relative h-[70vh] w-full">
+            <Image
+              src={galleryImages[currentImage].src || "/placeholder.svg"}
+              alt={galleryImages[currentImage].alt}
+              fill
+              className="object-contain"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm p-4">
+              <h3 className="text-lg font-medium">{galleryImages[currentImage].title}</h3>
+              <p className="text-muted-foreground">{galleryImages[currentImage].description}</p>
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-2 right-2 rounded-full bg-background/50 hover:bg-background/80"
+              onClick={() => setOpen(false)}
+            >
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-background/50 hover:bg-background/80"
+              onClick={prevImage}
+            >
+              <ChevronLeft className="h-8 w-8" />
+              <span className="sr-only">Previous</span>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-background/50 hover:bg-background/80"
+              onClick={nextImage}
+            >
+              <ChevronRight className="h-8 w-8" />
+              <span className="sr-only">Next</span>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
+  )
+}
+
