@@ -9,7 +9,7 @@ body {
 @layer utilities {
   .text-balance {
     word-break: break-word;
-    text-wrap: balance;
+    hyphens: auto;
   }
 }
 
