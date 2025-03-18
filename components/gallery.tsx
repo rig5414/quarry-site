@@ -3,8 +3,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { galleryImages } from "@/lib/data"
 
 export default function Gallery() {
@@ -47,7 +47,8 @@ export default function Gallery() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background/95 backdrop-blur-sm">
+      <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background/95 backdrop-blur-sm gallery-dialog">
+        <DialogTitle className="sr-only">{galleryImages[currentImage].title}</DialogTitle>
           <div className="relative h-[70vh] w-full">
             <Image
               src={galleryImages[currentImage].src || "/placeholder.svg"}
@@ -59,15 +60,6 @@ export default function Gallery() {
               <h3 className="text-lg font-medium">{galleryImages[currentImage].title}</h3>
               <p className="text-muted-foreground">{galleryImages[currentImage].description}</p>
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-2 right-2 rounded-full bg-background/50 hover:bg-background/80"
-              onClick={() => setOpen(false)}
-            >
-              <X className="h-5 w-5" />
-              <span className="sr-only">Close</span>
-            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -89,6 +81,20 @@ export default function Gallery() {
           </div>
         </DialogContent>
       </Dialog>
+      <style jsx global>{`
+        .gallery-dialog [data-radix-dialog-close] {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          z-index: 10;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 9999px;
+        }
+        
+        .gallery-dialog [data-radix-dialog-close]:hover {
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      `}</style>
     </>
   )
 }

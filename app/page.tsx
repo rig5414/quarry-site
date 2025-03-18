@@ -94,7 +94,7 @@ export default function Home() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/public/images/quarrysite.jpg"
+                  src="/images/quarrysite1.jpg"
                   alt="Quarry operations"
                   fill
                   className="object-cover"
