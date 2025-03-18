@@ -5,14 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
-
-const galleryImages = Array.from({ length: 8 }).map((_, index) => ({
-  id: index + 1,
-  src: `/placeholder.svg?height=400&width=400&text=Gallery+${index + 1}`,
-  alt: `Gallery image ${index + 1}`,
-  title: `Project ${index + 1}`,
-  description: `Description for project ${index + 1}`,
-}))
+import { galleryImages } from "@/lib/data"
 
 export default function Gallery() {
   const [open, setOpen] = useState(false)

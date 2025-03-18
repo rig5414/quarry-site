@@ -7,6 +7,7 @@ import ProductCard from "@/components/product-card"
 import TestimonialCard from "@/components/testimonial-card"
 import ContactForm from "@/components/contact-form"
 import Gallery from "@/components/gallery"
+import HeroCarousel from "@/components/hero-carousel"
 import { products, testimonials } from "@/lib/data"
 
 export default function Home() {
@@ -50,39 +51,8 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section id="home" className="relative">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/placeholder.svg?height=800&width=1920"
-              alt="Quarry site"
-              fill
-              className="object-cover brightness-50"
-              priority
-            />
-          </div>
-          <div className="container relative z-10 py-24 md:py-32 lg:py-40">
-            <div className="max-w-3xl space-y-5 text-white">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                Quality Stone Products for Construction Excellence
-              </h1>
-              <p className="text-lg md:text-xl">
-                We provide premium quality natural stones, ballast, and construction materials for all your building
-                needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="font-medium">
-                  Our Products
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-background/20 backdrop-blur-sm border-white text-white hover:bg-background/30"
-                >
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </div>
+        <section>
+          <HeroCarousel />
         </section>
 
         {/* About Section */}
@@ -124,7 +94,7 @@ export default function Home() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=800&width=600"
+                  src="/public/images/quarrysite.jpg"
                   alt="Quarry operations"
                   fill
                   className="object-cover"
@@ -413,27 +383,27 @@ export default function Home() {
               <h3 className="text-lg font-bold mb-4">Products</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
                     Building Stones
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
                     Ballast
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
                     Hardcore
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
                     Machine Cut Stones
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
                     Sand
                   </Link>
                 </li>
