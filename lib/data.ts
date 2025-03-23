@@ -51,7 +51,7 @@ export const testimonials: Testimonial[] = [
     name: "John Kamau",
     company: "Nairobi Construction Ltd",
     quote:
-      "PrimeStone Quarry has been our trusted supplier for over 5 years. Their materials are consistently high quality and deliveries are always on time.",
+      "Londiani Building Stones has been our trusted supplier for over 5 years. Their materials are consistently high quality and deliveries are always on time.",
     rating: 5,
   },
   {
@@ -79,7 +79,7 @@ export const galleryImages = [
     src: "/images/quarrysite.jpg",
     alt: "Quarry site overview",
     title: "Main Quarry Site",
-    description: "Our main quarry site in Juja, Kiambu County",
+    description: "Our main quarry site in Londiani, Kericho County",
   },
   {
     id: 2,

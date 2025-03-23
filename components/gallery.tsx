@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { galleryImages } from "@/lib/data"
+import Link from "next/link"
 
 export default function Gallery() {
   const [open, setOpen] = useState(false)
@@ -43,7 +44,9 @@ export default function Gallery() {
         ))}
       </div>
       <div className="text-center mt-8">
+        <Link href="/gallery">
         <Button>View More Projects</Button>
+        </Link>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>

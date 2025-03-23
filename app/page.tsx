@@ -2,52 +2,20 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Truck, Building2, Hammer, Shield } from "lucide-react"
-import MobileNav from "@/components/mobile-nav"
 import ProductCard from "@/components/product-card"
 import TestimonialCard from "@/components/testimonial-card"
 import ContactForm from "@/components/contact-form"
 import Gallery from "@/components/gallery"
 import HeroCarousel from "@/components/hero-carousel"
+import NavHeader from "@/components/nav-header"
+import Footer from "@/components/footer"
 import { products, testimonials } from "@/lib/data"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold">PrimeStone Quarry</span>
-            </Link>
-          </div>
-          <nav className="hidden md:flex gap-6">
-            <Link href="#home" className="text-sm font-medium transition-colors hover:text-primary">
-              Home
-            </Link>
-            <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary">
-              About
-            </Link>
-            <Link href="#products" className="text-sm font-medium transition-colors hover:text-primary">
-              Products
-            </Link>
-            <Link href="#gallery" className="text-sm font-medium transition-colors hover:text-primary">
-              Gallery
-            </Link>
-            <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" className="hidden md:flex">
-              <Phone className="mr-2 h-4 w-4" />
-              <span>+254 700 000 000</span>
-            </Button>
-            <Button className="hidden md:flex">Get Quote</Button>
-            <MobileNav />
-          </div>
-        </div>
-      </header>
+      <NavHeader />
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -60,9 +28,9 @@ export default function Home() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">About PrimeStone Quarry</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">About Londani Building Stones</h2>
                 <p className="text-muted-foreground mb-4">
-                  Established in 2005, PrimeStone Quarry has been a leading provider of high-quality stone products in
+                  Established in 2005, Londiani Building Stones has been a leading provider of high-quality stone products in
                   Kenya. Our state-of-the-art quarrying facilities and experienced team ensure that we deliver the best
                   materials for your construction projects.
                 </p>
@@ -93,12 +61,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="/images/quarrysite1.jpg"
-                  alt="Quarry operations"
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/images/quarrysite1.jpg" alt="Quarry operations" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -211,15 +174,16 @@ export default function Home() {
                     materials for your construction needs.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="secondary" size="lg">
-                      Get a Quote
+                    <Button variant="secondary" size="lg" asChild>
+                      <Link href="/contact">Get a Quote</Link>
                     </Button>
                     <Button
                       variant="outline"
                       size="lg"
                       className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+                      asChild
                     >
-                      Contact Sales
+                      <Link href="/contact">Contact Sales</Link>
                     </Button>
                   </div>
                 </div>
@@ -228,21 +192,21 @@ export default function Home() {
                     <Phone className="h-5 w-5" />
                     <div>
                       <p className="text-sm font-medium">Call Us</p>
-                      <p>+254 700 000 000</p>
+                      <p>+254 721 964 647</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 bg-primary-foreground/10 p-4 rounded-lg">
                     <Mail className="h-5 w-5" />
                     <div>
                       <p className="text-sm font-medium">Email Us</p>
-                      <p>info@primestonequarry.co.ke</p>
+                      <p>info@lbs.co.ke</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 bg-primary-foreground/10 p-4 rounded-lg">
                     <MapPin className="h-5 w-5" />
                     <div>
                       <p className="text-sm font-medium">Visit Us</p>
-                      <p>Juja, Kiambu County, Kenya</p>
+                      <p>Londiani, Kericho County, Kenya</p>
                     </div>
                   </div>
                 </div>
@@ -268,7 +232,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="font-medium">+254 700 000 000</p>
+                      <p className="font-medium">+254 721 964 647</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -277,7 +241,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="font-medium">info@primestonequarry.co.ke</p>
+                      <p className="font-medium">info@lbs.co.ke</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -286,7 +250,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Address</p>
-                      <p className="font-medium">Juja, Kiambu County, Kenya</p>
+                      <p className="font-medium">Londiani, Kericho County, Kenya</p>
                     </div>
                   </div>
                 </div>
@@ -294,7 +258,8 @@ export default function Home() {
                   <p className="font-medium mb-3">Follow Us</p>
                   <div className="flex gap-4">
                     <Link
-                      href="#"
+                      href="https://facebook.com/primestonequarry"
+                      target="_blank"
                       className="h-10 w-10 rounded-full bg-background flex items-center justify-center border hover:bg-muted transition-colors"
                     >
                       <Facebook className="h-5 w-5" />
@@ -324,116 +289,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-muted py-12">
-        <div className="container">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4">PrimeStone Quarry</h3>
-              <p className="text-muted-foreground mb-4">
-                Your trusted partner for high-quality construction materials since 2005.
-              </p>
-              <div className="flex gap-4">
-                <Link href="#" className="text-muted-foreground hover:text-foreground">
-                  <Facebook className="h-5 w-5" />
-                  <span className="sr-only">Facebook</span>
-                </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground">
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground">
-                  <Instagram className="h-5 w-5" />
-                  <span className="sr-only">Instagram</span>
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#home" className="text-muted-foreground hover:text-foreground">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#about" className="text-muted-foreground hover:text-foreground">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#gallery" className="text-muted-foreground hover:text-foreground">
-                    Gallery
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="text-muted-foreground hover:text-foreground">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Products</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
-                    Building Stones
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
-                    Ballast
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
-                    Hardcore
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
-                    Machine Cut Stones
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#products" className="text-muted-foreground hover:text-foreground">
-                    Sand
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contact Info</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
-                  <span className="text-muted-foreground">Juja, Kiambu County, Kenya</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
-                  <span className="text-muted-foreground">+254 700 000 000</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
-                  <span className="text-muted-foreground">info@primestonequarry.co.ke</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-8 pt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} PrimeStone Quarry. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }

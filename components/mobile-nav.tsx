@@ -21,7 +21,7 @@ export default function MobileNav() {
         <div className="flex flex-col gap-6 py-6">
           <div className="flex items-center justify-between">
             <Link href="/" className="font-bold text-xl" onClick={() => setOpen(false)}>
-              PrimeStone Quarry
+              Londiani Building Stones
             </Link>
             <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
               <X className="h-6 w-6" />
@@ -30,35 +30,42 @@ export default function MobileNav() {
           </div>
           <nav className="flex flex-col gap-4">
             <Link
-              href="#home"
+              href="/"
               className="text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setOpen(false)}
             >
               Home
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setOpen(false)}
             >
               About
             </Link>
             <Link
-              href="#products"
+              href="/products"
               className="text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setOpen(false)}
             >
               Products
             </Link>
             <Link
-              href="#gallery"
+              href="/gallery"
               className="text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setOpen(false)}
             >
               Gallery
             </Link>
             <Link
-              href="#contact"
+              href="/faqs"
+              className="text-lg font-medium hover:text-primary transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              FAQs
+            </Link>
+            <Link
+              href="/contact"
               className="text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setOpen(false)}
             >
@@ -66,10 +73,12 @@ export default function MobileNav() {
             </Link>
           </nav>
           <div className="flex flex-col gap-2 mt-4">
-            <Button className="w-full">Get Quote</Button>
+            <Button asChild className="w-full">
+              <Link href="/contact">Get Quote</Link>
+            </Button>
             <div className="flex items-center gap-2 mt-2">
-              <Button variant="outline" size="sm" className="w-full">
-                <span>+254 700 000 000</span>
+              <Button variant="outline" size="sm" className="w-full" asChild>
+                <Link href="tel:+254721964647">+254 721 964 647</Link>
               </Button>
             </div>
           </div>

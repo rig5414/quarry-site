@@ -8,6 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { products } from "@/lib/data"
+import { submitContactForm } from "@/lib/action"
 
 export default function ContactForm() {
   const { toast } = useToast()
@@ -25,6 +28,10 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
+  const handleSubjectChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, subject: value }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -40,10 +47,9 @@ export default function ContactForm() {
       return
     }
 
-    // Simulate form submission
     try {
-      // In production, you would send this data to your server
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      // Submit form data to server
+      await submitContactForm(formData)
 
       toast({
         title: "Success",
@@ -76,15 +82,7 @@ export default function ContactForm() {
           <Label htmlFor="name" className="text-sm font-medium">
             Full Name <span className="text-red-500">*</span>
           </Label>
-          <Input
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            placeholder="John Doe"
-            required
-          />
+          <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" required />
         </div>
         <div className="space-y-2">
           <Label htmlFor="email" className="text-sm font-medium">
@@ -96,7 +94,6 @@ export default function ContactForm() {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="john@example.com"
             required
           />
@@ -106,27 +103,27 @@ export default function ContactForm() {
         <Label htmlFor="phone" className="text-sm font-medium">
           Phone Number
         </Label>
-        <Input
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          placeholder="+254 700 000 000"
-        />
+        <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+254 700 000 000" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="subject" className="text-sm font-medium">
           Subject
         </Label>
-        <Input
-          id="subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          placeholder="Quote Request"
-        />
+        <Select onValueChange={handleSubjectChange} value={formData.subject}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select a product" />
+          </SelectTrigger>
+          <SelectContent>
+            {products.map((product) => (
+              <SelectItem key={product.id} value={product.name}>
+                {product.name}
+              </SelectItem>
+            ))}
+            <SelectItem value="General Inquiry">General Inquiry</SelectItem>
+            <SelectItem value="Custom Order">Custom Order</SelectItem>
+            <SelectItem value="Bulk Purchase">Bulk Purchase</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       <div className="space-y-2">
         <Label htmlFor="message" className="text-sm font-medium">
@@ -137,7 +134,7 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="min-h-[120px]"
           placeholder="Tell us about your project and requirements..."
           required
         />
