@@ -104,7 +104,7 @@ export const galleryImages = [
   },
   {
     id: 5,
-    src: "/images/ballast2.jpeg",
+    src: "/images/ballast.jpeg",
     alt: "Ballast production",
     title: "Ballast Production",
     description: "Production of various sizes of ballast for construction",
