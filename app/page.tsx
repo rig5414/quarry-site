@@ -131,6 +131,11 @@ export default function Home() {
                 <ProductCard key={index} product={product} />
               ))}
             </div>
+            <div className="text-center mt-10">
+              <Button size="lg" asChild>
+                <Link href="/products">View All Products</Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -258,7 +263,7 @@ export default function Home() {
                   <p className="font-medium mb-3">Follow Us</p>
                   <div className="flex gap-4">
                     <Link
-                      href="https://facebook.com/primestonequarry"
+                      href="https://facebook.com/londianibuildingstones"
                       target="_blank"
                       className="h-10 w-10 rounded-full bg-background flex items-center justify-center border hover:bg-muted transition-colors"
                     >

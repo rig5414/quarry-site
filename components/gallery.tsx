@@ -38,6 +38,7 @@ export default function Gallery() {
               src={image.src || "/placeholder.svg"}
               alt={image.alt}
               fill
+              quality={90}
               className="object-cover hover:scale-105 transition-transform"
             />
           </div>
@@ -57,6 +58,7 @@ export default function Gallery() {
               src={galleryImages[currentImage].src || "/placeholder.svg"}
               alt={galleryImages[currentImage].alt}
               fill
+              quality={90}
               className="object-contain"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm p-4">

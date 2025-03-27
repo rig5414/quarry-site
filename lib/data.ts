@@ -40,7 +40,7 @@ export const products: Product[] = [
     id: 6,
     name: "Quarry Dust",
     description: "Fine material used for block making and as a sand substitute.",
-    image: "/images/quarrydust.jpg",
+    image: "/images/coarsequarrydust.jpg",
     category: "construction",
   },
 ]
@@ -59,7 +59,7 @@ export const testimonials: Testimonial[] = [
     name: "Mary Wanjiku",
     company: "Wanjiku Developers",
     quote:
-      "The building stones we purchased were of excellent quality. Our clients were impressed with the final look of their homes. We'll definitely continue working with PrimeStone.",
+      "The building stones we purchased were of excellent quality. Our clients were impressed with the final look of their homes. We'll definitely continue working with Londiani Building Stones.",
     rating: 5,
   },
   {
@@ -83,14 +83,14 @@ export const galleryImages = [
   },
   {
     id: 2,
-    src: "/images/stoneprod.jpg",
+    src: "/images/stonecutter.jpeg",
     alt: "Stone cutting process",
     title: "Stone Cutting Process",
     description: "Modern machinery used for precise stone cutting",
   },
   {
     id: 3,
-    src: "/images/stackedstones.jpg",
+    src: "/images/stonesstacked1.jpeg",
     alt: "Building stones stacked",
     title: "Building Stone Production",
     description: "High-quality building stones ready for delivery",
@@ -104,7 +104,7 @@ export const galleryImages = [
   },
   {
     id: 5,
-    src: "/images/ballast.jpg",
+    src: "/images/ballast2.jpeg",
     alt: "Ballast production",
     title: "Ballast Production",
     description: "Production of various sizes of ballast for construction",
@@ -125,7 +125,7 @@ export const galleryImages = [
   },
   {
     id: 8,
-    src: "/images/buildedhouse.jpg",
+    src: "/images/finishedhouse.jpg",
     alt: "Completed building project",
     title: "Completed Project",
     description: "A commercial building constructed with our materials",

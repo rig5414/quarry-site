@@ -1,17 +1,40 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { products } from "@/lib/data"
 import ProductCard from "@/components/product-card"
 import NavHeader from "@/components/nav-header"
-import Footer from "@/components/footer"
 import type { Metadata } from "next"
+import Footer from "@/components/footer"
+import { getAllProducts } from "@/lib/db-actions"
 
 export const metadata: Metadata = {
-  title: "Products | Londiani Building Stones",
+  title: "Products | londianibuildingstones",
   description: "Browse our wide range of high-quality stone products for all your construction needs.",
 }
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getAllProducts()
+
+  // Group products by category
+  const categories = products.reduce(
+    (acc, product) => {
+      const category = product.category
+      if (!acc[category]) {
+        acc[category] = []
+      }
+      acc[category].push(product)
+      return acc
+    },
+    {} as Record<string, typeof products>,
+  )
+
+  // Format category names for display
+  const formatCategoryName = (category: string) => {
+    return category
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <NavHeader />
@@ -29,13 +52,19 @@ export default function ProductsPage() {
           </Button>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {Object.entries(categories).map(([category, categoryProducts]) => (
+          <div key={category} className="mb-16">
+            <h2 className="text-2xl font-bold tracking-tight mb-6">{formatCategoryName(category)}</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {categoryProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <Footer/>
+
+      <Footer />
     </div>
   )
 }

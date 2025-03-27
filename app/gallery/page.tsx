@@ -34,7 +34,7 @@ export default function GalleryPage() {
     },
     {
       id: 11,
-      src: "/images/buildedhouse.jpg",
+      src: "/images/happycustomer.jpeg",
       alt: "Completed building",
       title: "Commercial Building",
       description: "A completed  building constructed with our materials",

@@ -42,15 +42,16 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         {slides.map((slide, index) => (
           <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            currentSlide === index ? "opacity-100 z-1" : "opacity-0 z-0"
-          }`}
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              currentSlide === index ? "opacity-100 z-1" : "opacity-0 z-0"
+            }`}
           >
             <Image
               src={slide.image || "/placeholder.svg"}
               alt={slide.alt}
               fill
+              quality={90}
               className="object-cover brightness-50"
               priority={index === 0}
             />
