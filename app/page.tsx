@@ -29,16 +29,18 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-6">About Londani Building Stones</h2>
-                <p className="text-muted-foreground mb-4">
-                  Established in 2005, Londiani Building Stones has been a leading provider of high-quality stone products in
-                  Kenya. Our state-of-the-art quarrying facilities and experienced team ensure that we deliver the best
-                  materials for your construction projects.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  We take pride in our sustainable quarrying practices and commitment to environmental conservation. Our
-                  products meet the highest industry standards and are trusted by major construction companies across
-                  the country.
-                </p>
+                <p className="text-muted-foreground mb-4 text-black">
+  Londiani and Kedowa quarries have been known to produce the best natural stones for construction. 
+  <span className="font-bold">Londiani Building Stones</span> is situated in the heart of the region. 
+  We are the leading provider of high-quality stone products in the <span className="font-bold text-green-800">Rift Valley</span>, <span className="font-bold text-orange-800">Nyanza</span> and <span className="font-bold text-cyan-800">Western</span> regions. 
+  We offer a wide variety of locally produced stones, including grey, black, and yellow stones, among others, that come in the ideal sizes of 6 by 9 and 9 by 9.
+  <br /><br />
+  <span className="font-bold">Londiani Building Stones</span> also outsources other products from other partnered manufacturers thus maintaining a strategic supply and offering a one-stop site for clients
+</p>
+<p className="text-muted-foreground mb-6 text-black">
+  Customers seek our products because of their strength, durability and aesthetic value. Our stones can also withstand any weather condition making 
+  them ideal for any project. Our state-of-the-art quarrying facilities and experienced team ensure that we deliver the best materials for your construction projects.
+</p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-2">
                     <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
@@ -77,39 +79,39 @@ export default function Home() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-background rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
+              <div className="bg-quarry-background/30 rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                   <Hammer className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-medium mb-2">Stone Quarrying</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold mb-2">Stone Quarrying</h3>
+                <p className="text-black">
                   Extraction of high-quality natural stones using modern equipment and techniques.
                 </p>
               </div>
-              <div className="bg-background rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
+              <div className="bg-quarry-background/30 rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                   <Truck className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-medium mb-2">Material Delivery</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold mb-2">Material Delivery</h3>
+                <p className="text-black">
                   Prompt and reliable delivery of materials to your construction site.
                 </p>
               </div>
-              <div className="bg-background rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
+              <div className="bg-quarry-background/30 rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-medium mb-2">Quality Testing</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold mb-2">Quality Testing</h3>
+                <p className="text-black">
                   Rigorous testing to ensure all materials meet industry standards and specifications.
                 </p>
               </div>
-              <div className="bg-background rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
+              <div className="bg-quarry-background/30 rounded-lg p-6 shadow-sm border hover:border-primary hover:shadow-md transition-all">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                   <Building2 className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-medium mb-2">Consultation</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold mb-2">Consultation</h3>
+                <p className="text-black">
                   Expert advice on the best materials for your specific construction project.
                 </p>
               </div>

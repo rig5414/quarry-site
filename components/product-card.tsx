@@ -22,7 +22,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const productId = isProductType(product) ? product.id : product.id.toString()
 
   return (
-    <div className="group overflow-hidden rounded-lg border bg-background shadow-sm hover:shadow-md transition-all">
+    <div className="group overflow-hidden rounded-lg border bg-white shadow-sm hover:shadow-md transition-all">
       <div className="relative h-48 overflow-hidden">
         <Image
           src={product.image || "/placeholder.svg"}
@@ -34,11 +34,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
       <div className="p-5">
         <h3 className="text-xl font-medium mb-2">{product.name}</h3>
-        <p className="text-muted-foreground mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4 text-quarry-text">{description}</p>
         <Button
           variant="outline"
           size="sm"
-          className="group-hover:bg-primary group-hover:text-primary-foreground"
+          className="group-hover:bg-quarry-accent2 group-hover:text-white border-quarry-accent2 text-quarry-accent2"
           asChild
         >
           <Link href={`/products/${productId}`}>

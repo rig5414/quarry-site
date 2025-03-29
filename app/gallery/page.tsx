@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import NavHeader from "@/components/nav-header"
-import WhatsappButton from "@/components/whatsapp-button"
 import { galleryImages } from "@/lib/data"
 import type { Metadata } from "next"
 import Footer from "@/components/footer"
@@ -51,8 +50,6 @@ export default function GalleryPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <NavHeader />
-      <WhatsappButton />
-
       <main className="flex-1">
         <div className="container py-12 md:py-16">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">

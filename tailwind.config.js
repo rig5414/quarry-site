@@ -18,6 +18,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        quarry: {
+          background: "#60412F",
+          navbar: "#8B4513",
+          accent1: "#D2B48C", 
+          accent2: "#A0522D", 
+          accent3: "#556B2F", 
+          stone1: "#D3D3D3",
+          stone2: "#A9A9A9",
+          text: "#3E2723",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -51,10 +61,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        zIndex: {
-          '0': '0',
-          '1': '1',
-        }
       },
       borderRadius: {
         lg: "var(--radius)",

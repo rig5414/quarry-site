@@ -65,7 +65,7 @@ export default function HeroCarousel() {
           <p className="text-lg md:text-xl">{slides[currentSlide].description}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="#products">
-              <Button size="lg" className="font-medium">
+              <Button size="lg" className="font-medium bg-quarry-accent2 text-white hover: bg-quarry-accent2/90">
                 Our Products
               </Button>
             </Link>
@@ -73,7 +73,7 @@ export default function HeroCarousel() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-background/20 backdrop-blur-sm border-white text-white hover:bg-background/30"
+                className="bg-white/20 backdrop-blur-sm border-white text-white hover:bg-white/30"
               >
                 Contact Us
               </Button>
@@ -86,7 +86,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/20 hover:bg-background/40 text-white"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/20 hover:bg-white/40 text-white"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-8 w-8" />
@@ -95,7 +95,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/20 hover:bg-background/40 text-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/20 hover:bg-white/40 text-white"
         onClick={nextSlide}
       >
         <ChevronRight className="h-8 w-8" />
