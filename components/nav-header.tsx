@@ -50,7 +50,7 @@ export default function NavHeader() {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" className="hidden md:flex bg-white text-quarry-navbar hover:bg-black/40">
+          <Button variant="outline" size="sm" className="hidden md:flex bg-white/70 text-quarry-navbar hover:bg-black/40">
             <Phone className="mr-2 h-4 w-4" />
             <Link href="tel:+254721964647">+254 721 964 647</Link>
           </Button>
