@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
 import MobileNav from "@/components/mobile-nav"
 import { usePathname } from "next/navigation"
-import LBSLogo from "./ui/LBSLogo"
+import Image from "next/image"
 
 export default function NavHeader() {
   const pathname = usePathname()
@@ -19,10 +19,19 @@ export default function NavHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-quarry-background -navbar shadow-md">
       <div className="container flex h-24 items-center justify-between">
-        <div className="flex items-center gap-4">
-          <LBSLogo />
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-serif font-semibold text-quarry-stone2">
+        <div className="flex items-center gap-1">
+        <Link href="/" className="flex items-center h-20 overflow-hidden">
+          <Image 
+            src="/sitelogo.webp"
+            alt="Londiani Building Stones Logo"
+            width={100}
+            height={100}
+            className="h-25 w-auto object-contain"
+            priority
+          />
+        </Link>
+          <Link href="/" className="flex items-center">
+            <span className="text-2xl font-ultra text-quarry-stone2 hover:text-slate-400 transition-color duration-300 ease-in-out">
               LONDIANI<br />
               BUILDING<br />
               STONES

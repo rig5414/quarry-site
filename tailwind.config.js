@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        cherry: ['var(--font-cherry-cream-soda)', 'Arial', 'Helvetica', 'sans-serif'],
+        ultra: ['var(--font-ultra)', 'serif'],
+        besley: ['var(--font-besley)', 'serif'],
+        alfa: ['var(--font-alfa-slab-one)', 'cursive'],
+        luckiest: ['var(--font-luckiest-guy)', 'cursive'],
+      },
       colors: {
         quarry: {
           background: "#60412F",

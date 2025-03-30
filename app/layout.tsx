@@ -1,6 +1,6 @@
-import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter } from 'next/font/google'
+import { Cherry_Cream_Soda, Ultra, Besley, Alfa_Slab_One, Luckiest_Guy } from 'next/font/google'
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
@@ -9,6 +9,36 @@ import { Analytics } from "@vercel/analytics/react"
 import WhatsappButton from "@/components/whatsapp-button"
 
 const inter = Inter({ subsets: ["latin"] })
+
+// Define all the fonts
+const cherryCreamSoda = Cherry_Cream_Soda({ 
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-cherry-cream-soda',
+})
+
+const ultra = Ultra({ 
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-ultra',
+})
+
+const besley = Besley({ 
+  subsets: ["latin"],
+  variable: '--font-besley',
+})
+
+const alfaSlabOne = Alfa_Slab_One({ 
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-alfa-slab-one',
+})
+
+const luckiestGuy = Luckiest_Guy({ 
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-luckiest-guy',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +56,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html 
+      lang="en" 
+      suppressHydrationWarning 
+      className={`
+        ${cherryCreamSoda.variable} 
+        ${ultra.variable} 
+        ${besley.variable} 
+        ${alfaSlabOne.variable} 
+        ${luckiestGuy.variable}
+      `}
+    >
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
@@ -39,4 +79,3 @@ export default function RootLayout({
     </html>
   )
 }
-
