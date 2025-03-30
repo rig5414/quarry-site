@@ -38,11 +38,16 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <Mail className="h-5 w-5" />
+                  <a href={`mailto:londianibuildingstones@gmail.com`}
+                  className="h-5 w-5"
+                  aria-label="londianibuildingstones@gmail.com"
+                  ><Mail className="h-5 w-5" /></a>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">info@lbs.co.ke</p>
+                  <a 
+                  href={`mailto:londianibuildingstones@gmail.com`}
+                  className="font-medium">londianibuildingstones@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-center gap-3">

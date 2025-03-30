@@ -22,7 +22,7 @@ export default function NavHeader() {
         <div className="flex items-center gap-4">
           <LBSLogo />
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-serif font-semibold">
+            <span className="text-2xl font-serif font-semibold text-quarry-stone2">
               LONDIANI<br />
               BUILDING<br />
               STONES

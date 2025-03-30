@@ -31,7 +31,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 text-quarry-accent1">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-white/80 hover:text-white">
@@ -66,7 +66,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Products</h3>
+            <h3 className="text-lg font-bold mb-4 text-quarry-accent1">Products</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/products" className="text-white/80 hover:text-white">
@@ -96,25 +96,25 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Info</h3>
+            <h3 className="text-lg font-bold mb-4 text-quarry-accent1">Contact Info</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
+              <li className="flex items-start gap-3 shrink-0">
+                <MapPin className="h-5 w-5 text-black/50 mt-0.5 shrink-0" />
                 <span className="text-white/80">Londiani, Kericho County, Kenya</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
+              <li className="flex items-start gap-3 shrink-0">
+                <Phone className="h-5 w-5 text-black/50 mt-0.5 shrink-0" />
                 <span className="text-white/80">+254 721 964 647</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
-                <span className="text-white/80">info@lbs.co.ke</span>
+              <li className="flex items-start gap-3 shrink-0">
+                <Mail className="h-5 w-5 text-black/50 mt-0.5 shrink-0" />
+                <span className="text-white/80 break-all">londianibuildingstones@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="border-t mt-8 pt-8 text-center">
-          <p className="text-sm text-muted-foreground text-black">
+          <p className="text-sm text-black/60">
             &copy; {new Date().getFullYear()} Londiani Building Stones. All rights reserved.
           </p>
         </div>
