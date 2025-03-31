@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Truck, Building2, Hammer, Shield } from "lucide-react"
+import { FaXTwitter } from "react-icons/fa6"
 import ProductCard from "@/components/product-card"
 import TestimonialCard from "@/components/testimonial-card"
 import ContactForm from "@/components/contact-form"
@@ -282,8 +283,8 @@ export default function Home() {
                       href="#"
                       className="h-10 w-10 rounded-full bg-background flex items-center justify-center border hover:bg-muted transition-colors"
                     >
-                      <Twitter className="h-5 w-5" />
-                      <span className="sr-only">Twitter</span>
+                    <FaXTwitter className="w-5 h-5" />
+                    <span className="sr-only">Twitter</span>
                     </Link>
                     <Link
                       href="#"
