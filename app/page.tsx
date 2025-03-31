@@ -47,7 +47,7 @@ export default function Home() {
                       <Building2 className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">20+ Years</h4>
+                      <h4 className="font-medium">10+ Years</h4>
                       <p className="text-sm text-muted-foreground">Experience</p>
                     </div>
                   </div>
@@ -56,7 +56,7 @@ export default function Home() {
                       <Truck className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">500+</h4>
+                      <h4 className="font-medium">200+</h4>
                       <p className="text-sm text-muted-foreground">Projects</p>
                     </div>
                   </div>

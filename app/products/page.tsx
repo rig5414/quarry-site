@@ -35,6 +35,21 @@ export default async function ProductsPage() {
       .join(" ")
   }
 
+  // Define custom category order
+  const categoryOrder = ["building-stones", "hardcore", "sand", "ballast", "quarry-dust"]
+
+  // Sort categories according to the custom order
+  const sortedCategories = Object.entries(categories).sort((a, b) => {
+    const indexA = categoryOrder.indexOf(a[0])
+    const indexB = categoryOrder.indexOf(b[0])
+
+    // If a category isn't in our predefined order, place it at the end
+    if (indexA === -1) return 1
+    if (indexB === -1) return -1
+
+    return indexA - indexB
+  })
+
   return (
     <div className="flex min-h-screen flex-col">
       <NavHeader />
@@ -52,7 +67,7 @@ export default async function ProductsPage() {
           </Button>
         </div>
 
-        {Object.entries(categories).map(([category, categoryProducts]) => (
+        {sortedCategories.map(([category, categoryProducts]) => (
           <div key={category} className="mb-16">
             <h2 className="text-2xl font-bold tracking-tight mb-6">{formatCategoryName(category)}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
