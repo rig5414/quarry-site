@@ -49,7 +49,7 @@ export default function FAQsPage() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base text-black">
-                  Yes, we deliver to all areas in Kenya. We have a fleet of trucks that ensure timely delivery of
+                  Yes, we deliver to all areas in Kenya. However, we mainly supply to Nyanza, Western and Rift Valley regions because of it's proximity to the quarry site.  We have a fleet of trucks that ensure timely delivery of
                   materials to your construction site, regardless of location. Delivery charges may vary depending on
                   the distance and quantity of materials ordered.
                 </AccordionContent>
@@ -63,7 +63,7 @@ export default function FAQsPage() {
                   </div>
                   </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base text-black">
-                  You can place an order by contacting us through our website's contact form, calling our office
+                  You can place an order by contacting us through our website's contact form, Whatsapp communication, calling our office
                   directly, or visiting our quarry site in Londiani. We recommend getting a quote first to understand the
                   pricing for your specific requirements.
                 </AccordionContent>
