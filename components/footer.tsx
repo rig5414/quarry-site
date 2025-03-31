@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram } from "lucide-react"
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -21,7 +22,7 @@ export default function Footer() {
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link href="#" className="text-white/80 hover:text-white">
-                <Twitter className="h-5 w-5" />
+                <FaXTwitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link href="#" className="text-white/80 hover:text-white">
