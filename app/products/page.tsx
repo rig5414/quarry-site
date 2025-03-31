@@ -63,7 +63,7 @@ export default async function ProductsPage() {
           </div>
         ))}
       </div>
-
+      <div></div>
       <Footer />
     </div>
   )
